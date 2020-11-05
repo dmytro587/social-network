@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.js": "/social-network/static/js/main.a4c4f6d7.chunk.js",
+    "main.js.map": "/social-network/static/js/main.a4c4f6d7.chunk.js.map",
+    "runtime-main.js": "/social-network/static/js/runtime-main.eb346436.js",
+    "runtime-main.js.map": "/social-network/static/js/runtime-main.eb346436.js.map",
+    "static/css/2.764ccc25.chunk.css": "/social-network/static/css/2.764ccc25.chunk.css",
+    "static/js/2.7a85e118.chunk.js": "/social-network/static/js/2.7a85e118.chunk.js",
+    "static/js/2.7a85e118.chunk.js.map": "/social-network/static/js/2.7a85e118.chunk.js.map",
+    "index.html": "/social-network/index.html",
+    "precache-manifest.6e7ca93296ac50685c74bad351004e59.js": "/social-network/precache-manifest.6e7ca93296ac50685c74bad351004e59.js",
+    "service-worker.js": "/social-network/service-worker.js",
+    "static/css/2.764ccc25.chunk.css.map": "/social-network/static/css/2.764ccc25.chunk.css.map",
+    "static/js/2.7a85e118.chunk.js.LICENSE.txt": "/social-network/static/js/2.7a85e118.chunk.js.LICENSE.txt",
+    "static/media/arrowLeft.svg": "/social-network/static/media/arrowLeft.6b518bd1.svg",
+    "static/media/arrowRight.svg": "/social-network/static/media/arrowRight.ad655ff3.svg",
+    "static/media/cancel.svg": "/social-network/static/media/cancel.cad70081.svg",
+    "static/media/edit.svg": "/social-network/static/media/edit.c33860f6.svg",
+    "static/media/facebook.svg": "/social-network/static/media/facebook.d0a707b8.svg",
+    "static/media/github.svg": "/social-network/static/media/github.850feb2c.svg",
+    "static/media/instagram.svg": "/social-network/static/media/instagram.2aac62f3.svg",
+    "static/media/like.svg": "/social-network/static/media/like.085927d0.svg",
+    "static/media/profile.svg": "/social-network/static/media/profile.d0b321f0.svg",
+    "static/media/search.svg": "/social-network/static/media/search.c6f40dde.svg",
+    "static/media/twitter.svg": "/social-network/static/media/twitter.a6f2f2d8.svg",
+    "static/media/user.svg": "/social-network/static/media/user.90839217.svg",
+    "static/media/users.svg": "/social-network/static/media/users.562195c3.svg",
+    "static/media/vector.svg": "/social-network/static/media/vector.023ece35.svg",
+    "static/media/vkontakte.svg": "/social-network/static/media/vkontakte.09c8e6b5.svg",
+    "static/media/website.svg": "/social-network/static/media/website.82c43677.svg",
+    "static/media/youtube.svg": "/social-network/static/media/youtube.a51ab7ed.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eb346436.js",
+    "static/css/2.764ccc25.chunk.css",
+    "static/js/2.7a85e118.chunk.js",
+    "static/js/main.a4c4f6d7.chunk.js"
+  ]
+}
