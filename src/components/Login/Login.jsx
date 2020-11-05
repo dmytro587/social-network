@@ -1,12 +1,8 @@
 import React from 'react';
 import LoginForm from './LoginForm/LoginForm';
-import { connect } from 'react-redux';
-import { login } from '../../redux/authReducer';
 import openInNewWindow from '../../utils/openInNewWindow';
-
 import Overlay from '../common/styles/Overlay';
 import * as S from './styles';
-
 
 const Login = ({ captchaUrl, errorMessage, login }) => {
    return (
@@ -26,11 +22,5 @@ const Login = ({ captchaUrl, errorMessage, login }) => {
    );
 }
 
-export default connect(
-   ({ auth }) => ({
-      captchaUrl: auth.captchaUrl,
-      errorMessage: auth.error
-   }),
-   { login })
-(Login);
+export default Login;
 

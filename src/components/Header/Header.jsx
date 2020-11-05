@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SearchForm from './SearchForm/SearchForm';
-
-import * as S from './styles';
-import logo from '../../assets/images/vector.svg';
 import { connect } from 'react-redux';
 import { logout } from '../../redux/authReducer';
-import Avatar from '../common/Avatar/Avatar';
+
 import Menu, { MenuItem } from '../common/Menu/Menu';
+import SearchForm from './SearchForm/SearchForm';
+import Avatar from '../common/Avatar/Avatar';
+
+import logo from '../../assets/images/vector.svg';
+import * as S from './styles';
 
 const Header = ({ isAuth, userLogin, photo, logout }) => {
 

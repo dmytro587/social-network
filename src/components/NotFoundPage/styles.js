@@ -8,6 +8,14 @@ export const Wrapper = styled(Overlay)`
   flex-direction: column;
   
   font-size: 1.5rem;
+  background-color: #fff;
+  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
 `;
 
 export const Title = styled.h1`

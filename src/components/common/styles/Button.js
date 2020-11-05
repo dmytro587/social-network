@@ -15,7 +15,7 @@ const Button = styled.button`
    border: none;
    
    transition: background-color .1s ease;
-   cursor:pointer;
+   cursor: ${({ cursorPointer }) => !cursorPointer ? 'pointer': 'default'};
 
    &:hover,
    &:disabled,

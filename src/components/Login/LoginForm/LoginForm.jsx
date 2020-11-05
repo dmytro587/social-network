@@ -26,7 +26,6 @@ const LoginForm = ({ login, captchaUrl }) => {
       login(values)
          .then(() => isMount && setStatus({ error: '' }))
          .catch( err => {
-            console.log(err)
             isMount && setStatus({ error: err });
          })
    }
@@ -36,7 +35,7 @@ const LoginForm = ({ login, captchaUrl }) => {
          initialValues={ initialVales }
          onSubmit={ handleSubmit }
       >
-         {({ status }) => (
+         {({ status, isSubmitting }) => (
             <Form>
                <S.FieldsWrapper>
                   <FormikControl
@@ -60,15 +59,9 @@ const LoginForm = ({ login, captchaUrl }) => {
                   />
                </S.FieldsWrapper>
 
-               {
-                  console.log('====status====', status)
-               }
-
-               {
-                  status?.error && (
-                     <S.ErrorText>{ status.error || '' }</S.ErrorText>
-                  )
-               }
+               { status?.error && (
+                  <S.ErrorText>{ status.error || '' }</S.ErrorText>
+               ) }
 
                {
                   captchaUrl && (
@@ -83,10 +76,8 @@ const LoginForm = ({ login, captchaUrl }) => {
                   </>)
                }
 
-
-
                <InlinePositioner center>
-                  <Button large type="submit">Login</Button>
+                  <Button cursorPointer={ isSubmitting } large type="submit">Login</Button>
                </InlinePositioner>
             </Form>
          )}

@@ -7,6 +7,7 @@ const Overlay = styled.div`
    left: 0;
    right: 0;
    background-color: #fff;
+   z-index: 1200;
 `;
 
 export default Overlay;

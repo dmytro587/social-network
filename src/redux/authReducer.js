@@ -53,7 +53,8 @@ export const login = formData =>
       } else if (response.resultCode === ResultCodes.Captcha) {
          dispatch(getCaptcha());
       } else {
-         return Promise.reject(response.messages[0] || 'some error');
+         const message = response.messages[0] || 'some error';
+         return Promise.reject(message);
       }
    }
 

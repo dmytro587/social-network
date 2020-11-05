@@ -8,16 +8,16 @@ const Menu = ({ menuButton, children }) => {
 
    const handleClick = () => setIsOpen(!isOpen);
 
-   const closeMenu = e => {
-      if (!menuRef.contains(e.target)) {
-         setIsOpen(false);
-      }
-   }
-
    useEffect(() => {
+      const closeMenu = e => {
+         if (!menuRef.contains(e.target)) {
+            setIsOpen(false);
+         }
+      }
+
       if (isOpen) document.addEventListener('click', closeMenu);
       else document.removeEventListener('click', closeMenu);
-   }, [isOpen, closeMenu]);
+   }, [isOpen, menuRef]);
 
    return (
       <S.Wrapper ref={ elem => setMenuRef(elem) }>

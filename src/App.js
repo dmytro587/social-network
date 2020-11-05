@@ -8,10 +8,10 @@ import Users from './containers/Users';
 import Header from './containers/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Preloader from './components/common/Preloader/Preloader';
-import Login from './components/Login/Login';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 import * as S from './styles';
+import Login from './containers/Login';
 
 const App = ({
    initializeApp,
@@ -44,7 +44,6 @@ const App = ({
    );
 }
 
-
 export default connect(
    ({ app, auth }) => ({
       isInitialized: app.isInitialized,
@@ -52,12 +51,4 @@ export default connect(
    }),
    { initializeApp }
 )(App);
-
-// = = = Profile = =
-// В PostForm текстарее стилизовать скролл
-// Сделать автоматически расширяющиеся инпуты
-// Пофиксить переход на соц. сети (убрать в путь от сайта)
-
-
-// For avatar: box-shadow: 0 3pt 8px 0.25pc rgba(0,0,0,.04);
 

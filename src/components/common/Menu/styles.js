@@ -6,7 +6,7 @@ const { borderBottom } = borders;
 
 export const Wrapper = styled.div`
   position: relative;
-  z-index: 1100;  
+  z-index: 100;  
 `;
 
 export const ButtonWrapper = styled.div`
