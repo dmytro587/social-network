@@ -4,7 +4,7 @@ import * as S from './styles';
 import arrowLeft from './../../../assets/images/arrowLeft.svg';
 import arrowRight from './../../../assets/images/arrowRight.svg';
 
-const Pagination = ({ totalCount, pageSize, currentPage, onPageClick }) => {
+const Pagination = ({ totalCount, pageSize, currentPage, onChangePage }) => {
 
    const portionNumbers = [];
    const PORTION_SIZE = 3;
@@ -41,18 +41,18 @@ const Pagination = ({ totalCount, pageSize, currentPage, onPageClick }) => {
             <S.PageItem
                key={ num }
                active={ num === currentPage }
-               onClick={ e => onPageClick(e.target.textContent) }>
+               onClick={ e => onChangePage(e.target.textContent) }>
                { num }
             </S.PageItem>
          );
       });
 
    const onPrevButtonClick = () => {
-      if (currentPage > 1) onPageClick(1);
+      if (currentPage > 1) onChangePage(1);
    }
 
    const onNextButtonClick = () => {
-      if (currentPage < pagesCount) onPageClick(pagesCount);
+      if (currentPage < pagesCount) onChangePage(pagesCount);
    }
 
    return (

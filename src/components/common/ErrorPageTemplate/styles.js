@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Overlay from '../common/styles/Overlay';
+import Overlay from '../styles/Overlay';
 
 export const Wrapper = styled(Overlay)`
   display: flex;
@@ -9,13 +9,6 @@ export const Wrapper = styled(Overlay)`
   
   font-size: 1.5rem;
   background-color: #fff;
-  
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1100;
 `;
 
 export const Title = styled.h1`

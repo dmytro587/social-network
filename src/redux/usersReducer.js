@@ -52,6 +52,7 @@ const usersReducer = (state = initialState, action) => {
          return { ...state, isFetching: action.isFetching }
 
       case SET_IS_FRIENDS :
+         if (action.isFriends === state.isFriends) return state;
          return { ...state, isFriends: action.isFriends, currentPage: 1 }
 
       default : return state;

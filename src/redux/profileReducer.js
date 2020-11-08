@@ -1,4 +1,5 @@
 import { profileAPI, ResultCodes } from '../api/api';
+import { actions as appActions } from './appReducer';
 
 const SET_PROFILE_DATA = 'profile/SET_PROFILE_DATA';
 const SET_PHOTO_SUCCESS = 'profile/SET_PHOTO_SUCCESS';
@@ -66,8 +67,12 @@ export const actions = {
 
 export const getUserProfile = userId =>
    async dispatch => {
-      const response = await profileAPI.getProfile(userId);
-      dispatch(actions.setProfileData(response.data));
+      try {
+         const response = await profileAPI.getProfile(userId);
+         dispatch(actions.setProfileData(response.data));
+      } catch (e) {
+         dispatch(appActions.setAppError(e.message));
+      }
    }
 
 export const getUserStatus = userId =>
@@ -114,6 +119,5 @@ export const savePhoto = photoFile =>
          dispatch(actions.setPhotoSuccess(response.data.photos));
       }
    }
-
 
 export default profileReducer;

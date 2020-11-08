@@ -9,6 +9,7 @@ import Header from './containers/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Preloader from './components/common/Preloader/Preloader';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 import * as S from './styles';
 import Login from './containers/Login';
@@ -16,15 +17,17 @@ import Login from './containers/Login';
 const App = ({
    initializeApp,
    isInitialized,
-   isAuth
+   isAuth,
+   errorMessage
 }) => {
 
    useEffect(() => {
       initializeApp();
    }, [initializeApp]);
 
-   if (!isInitialized) return <Preloader />;
-   if (!isAuth) return <Login/>;
+   if (!isInitialized) return <Preloader/>;
+   if (isInitialized && !isAuth) return <Login/>;
+   if (errorMessage) return <ErrorPage />;
 
    return (
       <Fragment>
@@ -47,7 +50,8 @@ const App = ({
 export default connect(
    ({ app, auth }) => ({
       isInitialized: app.isInitialized,
-      isAuth: auth.isAuth
+      isAuth: auth.isAuth,
+      errorMessage: app.errorMessage
    }),
    { initializeApp }
 )(App);

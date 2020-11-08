@@ -59,7 +59,7 @@ const Users = ({
             totalCount={ totalUsersCount }
             pageSize={ pageSize }
             currentPage={ currentPage }
-            onPageClick={ setCurrentPage }
+            onChangePage={ setCurrentPage }
          />
 
          <div>

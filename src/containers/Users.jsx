@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { actions, follow, getUsers, unfollow } from '../redux/usersReducer';
-import BaseUsers from '../components/Users/Users';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import BaseUsers from '../components/Users/Users';
 
 const Users = ({
    getUsers,
@@ -18,7 +18,6 @@ const Users = ({
    location
 }) => {
 
-
    useEffect(() => {
       if (location.pathname === '/users/friends') {
          setIsFriends(true);
@@ -26,6 +25,8 @@ const Users = ({
       } else {
          getUsers(pageSize, currentPage);
       }
+
+      return () => isFriends && setIsFriends(false);
    }, [ setIsFriends, getUsers, pageSize, currentPage, isFriends, location]);
 
    return (

@@ -6,23 +6,22 @@ import editIcon from '../../../../assets/images/edit.svg';
 import Block from '../../../common/styles/Block';
 import * as S from './styles';
 
-const ProfileInfo = ({
-   saveProfile,
-   isOwner,
-   profileData: {
-      fullName,
-      aboutMe,
-      contacts: socials,
-      lookingForAJob,
-      lookingForAJobDescription: jobDescription,
-   }
+const ProfileInfo = React.memo(({
+  saveProfile,
+  isOwner,
+  profileData: {
+     fullName,
+     aboutMe,
+     contacts: socials,
+     lookingForAJob,
+     lookingForAJobDescription: jobDescription,
+  }
 }) => {
 
    const [editMode, setEditMode] = useState(false);
 
    const onSaveProfileClick = profileData => {
-      saveProfile(profileData)
-         .then(() => setEditMode(false))
+      saveProfile(profileData).then(() => setEditMode(false));
    }
 
    return (
@@ -42,19 +41,19 @@ const ProfileInfo = ({
             {
                editMode
                   ? <ProfileDataForm
-                        onSubmitForm={ onSaveProfileClick }
-                        startedValues={ { fullName, aboutMe, socials, lookingForAJob, jobDescription } }
-                        socials={ socials }
-                    />
+                     onSubmitForm={ onSaveProfileClick }
+                     startedValues={ { fullName, aboutMe, socials, lookingForAJob, jobDescription } }
+                     socials={ socials }
+                  />
                   : <ProfileData
-                        aboutMe={ aboutMe }
-                        lookingForAJob={ lookingForAJob }
-                        jobDescription={ jobDescription }
-                    />
+                     aboutMe={ aboutMe }
+                     lookingForAJob={ lookingForAJob }
+                     jobDescription={ jobDescription }
+                  />
             }
          </S.Body>
       </Block>
    );
-}
+})
 
 export default ProfileInfo;

@@ -1,9 +1,11 @@
 import { getAuthUserData } from './authReducer';
 
-const INITIALIZE_SUCCESS = 'INITIALIZE_APP';
+const INITIALIZE_SUCCESS = 'app/INITIALIZE_APP';
+const SET_ERROR_MESSAGE = 'app/SET_ERROR_MESSAGE';
 
 const initialState = {
-   isInitialized: false
+   isInitialized: false,
+   errorMessage: null
 }
 
 const appReducer = (state = initialState, action) => {
@@ -12,21 +14,24 @@ const appReducer = (state = initialState, action) => {
       case INITIALIZE_SUCCESS :
          return { ...state, isInitialized: true }
 
+      case SET_ERROR_MESSAGE :
+         return { ...state, errorMessage: action.errorMessage }
+
       default : return state;
    }
 }
 
-const actions = {
-   initializeSuccess: () => ({ type: INITIALIZE_SUCCESS })
+export const actions = {
+   initializeSuccess: () => ({ type: INITIALIZE_SUCCESS }),
+   setAppError: errorMessage => ({ type: SET_ERROR_MESSAGE, errorMessage })
 }
 
 export const initializeApp = () =>
-   dispatch => {
+   async dispatch => {
       Promise.all([
          dispatch(getAuthUserData())
-      ]).then(
-         () => dispatch(actions.initializeSuccess())
-      );
+      ]).then(() => dispatch(actions.initializeSuccess()))
    }
 
 export default appReducer;
+
