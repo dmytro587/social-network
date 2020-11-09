@@ -6,6 +6,7 @@ import editIcon from '../../../../assets/images/edit.svg';
 import Block from '../../../common/styles/Block';
 import * as S from './styles';
 
+
 const ProfileInfo = React.memo(({
   saveProfile,
   isOwner,

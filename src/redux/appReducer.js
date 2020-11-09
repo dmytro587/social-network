@@ -11,11 +11,9 @@ const initialState = {
 const appReducer = (state = initialState, action) => {
 
    switch (action.type) {
-      case INITIALIZE_SUCCESS :
-         return { ...state, isInitialized: true }
+      case INITIALIZE_SUCCESS : return { ...state, isInitialized: true }
 
-      case SET_ERROR_MESSAGE :
-         return { ...state, errorMessage: action.errorMessage }
+      case SET_ERROR_MESSAGE : return { ...state, errorMessage: action.errorMessage }
 
       default : return state;
    }

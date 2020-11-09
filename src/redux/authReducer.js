@@ -25,11 +25,9 @@ const authReducer = (state = initialState, action) => {
          return { ...state, authorizedId, userLogin, email, isAuth }
       }
 
-      case SET_CAPTCHA_URL :
-         return { ...state, captchaUrl: action.url }
+      case SET_CAPTCHA_URL : return { ...state, captchaUrl: action.url }
 
-      default :
-         return state;
+      default : return state;
    }
 }
 

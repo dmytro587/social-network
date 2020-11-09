@@ -12,7 +12,10 @@ const NewPostForm = ({ photo, onPublish }) => {
    return (
       <Formik
          initialValues={{ newPost: '' }}
-         onSubmit={ values => onPublish(values.newPost) }
+         onSubmit={ (values, {resetForm}) => {
+            onPublish(values.newPost);
+            resetForm();
+         } }
       >
          { () => (
             <S.Form>

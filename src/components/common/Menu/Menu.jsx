@@ -10,9 +10,7 @@ const Menu = ({ menuButton, children }) => {
 
    useEffect(() => {
       const closeMenu = e => {
-         if (!menuRef.contains(e.target)) {
-            setIsOpen(false);
-         }
+         if (!menuRef.contains(e.target)) setIsOpen(false);
       }
 
       if (isOpen) document.addEventListener('click', closeMenu);

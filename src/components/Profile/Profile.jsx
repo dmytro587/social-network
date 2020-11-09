@@ -1,6 +1,6 @@
 import React from 'react';
-
 import openInNewWindow from '../../utils/openInNewWindow';
+
 import Avatar from './components/Avatar/Avatar';
 import ProfileInfo from './components/ProfileInfo/ProfileInfo';
 import Posts from './components/Posts/Posts';

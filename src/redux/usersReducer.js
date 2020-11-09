@@ -45,11 +45,9 @@ const usersReducer = (state = initialState, action) => {
          return { ...state, followInProgress: newFollowInProgress }
       }
 
-      case SET_CURRENT_PAGE :
-         return { ...state, currentPage: +action.pageNumber }
+      case SET_CURRENT_PAGE : return { ...state, currentPage: +action.pageNumber }
 
-      case SET_IS_FETCHING :
-         return { ...state, isFetching: action.isFetching }
+      case SET_IS_FETCHING : return { ...state, isFetching: action.isFetching }
 
       case SET_IS_FRIENDS :
          if (action.isFriends === state.isFriends) return state;

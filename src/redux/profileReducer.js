@@ -18,8 +18,7 @@ const initialState = {
 const profileReducer = (state = initialState, action) => {
 
    switch (action.type) {
-      case SET_PROFILE_DATA :
-         return { ...state, profileData: action.payload }
+      case SET_PROFILE_DATA : return { ...state, profileData: action.payload }
 
       case SET_PHOTO_SUCCESS :
          return {
@@ -31,27 +30,24 @@ const profileReducer = (state = initialState, action) => {
          }
 
       case ADD_POST :
-         if (!action.payload.trim()) return state;
-
-         const lastPostIndex = (state.posts.length - 1);
-         const lastPostId = state.posts.length && state.posts[lastPostIndex].id;
+         if (!action.text.trim()) return state;
 
          const newPost = {
-            id: lastPostId + 1,
-            text: action.payload,
+            id: state.posts.length + 1,
+            text: action.text,
             likesCount: 0
          }
 
          return { ...state, posts: [ newPost, ...state.posts ] }
 
       case DELETE_POST :
+         console.log('delete post', action.id)
          return {
             ...state,
             posts: [ ...state.posts.filter(post => post.id !== action.id) ]
          }
 
-      case SET_STATUS :
-         return { ...state, status: action.payload }
+      case SET_STATUS : return { ...state, status: action.payload }
 
       default : return state;
    }
@@ -60,7 +56,7 @@ const profileReducer = (state = initialState, action) => {
 export const actions = {
    setProfileData: profileData => ({ type: SET_PROFILE_DATA, payload: profileData }),
    setPhotoSuccess: photos => ({ type: SET_PHOTO_SUCCESS, payload: photos }),
-   addPost: text => ({ type: ADD_POST, payload: text }),
+   addPost: text => ({ type: ADD_POST, text }),
    deletePost: id => ({ type: DELETE_POST, id }),
    setStatus: status => ({ type: SET_STATUS, payload: status })
 }

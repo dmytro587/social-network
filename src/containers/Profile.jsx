@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from "react-router";
 import { compose } from 'redux';
-import BaseProfile from '../components/Profile/Profile';
 import {
    actions,
    getUserProfile,
@@ -11,6 +10,8 @@ import {
    saveProfile,
    saveStatus
 } from '../redux/profileReducer';
+
+import BaseProfile from '../components/Profile/Profile';
 import Preloader from '../components/common/Preloader/Preloader';
 
 
@@ -30,15 +31,15 @@ const Profile = ({
 }) => {
 
    const [isOwner, setIsOwner] = useState(false);
-   const userId = match.params.userId;
+   const urlUserId = match.params.userId;
+   const userId = urlUserId || authorizedId;
 
    useEffect(() => {
-      if (!userId) setIsOwner(true);
-      const id = userId || authorizedId;
+      if (!urlUserId) setIsOwner(true);
 
-      getUserProfile(id);
-      getUserStatus(id);
-   }, [userId, authorizedId, getUserStatus, getUserProfile]);
+      getUserProfile(userId);
+      getUserStatus(userId);
+   }, [userId, urlUserId]);
 
 
    if (!profileData) return <Preloader/>;
