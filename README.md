@@ -5,10 +5,10 @@ Password: free
 
 
 ## Available Scripts
-####**`npm start`**
+**`npm start`**
 Runs this project in development mode
 
-####**`npm build`**
+**`npm build`**
 Builds the app for production to the build folder.
 
 
