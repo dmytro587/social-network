@@ -74,10 +74,4 @@ const Pagination = ({ totalCount, pageSize, currentPage, onChangePage }) => {
 
 export default Pagination;
 
-// if (rightLimit === 0) {
-//    for (let i = leftLimit; i <= currentPage; i++) portionNumbers.push(i);
-// } else if (leftLimit === 0) {
-//    for (let i = currentPage; i <= rightLimit; i++) portionNumbers.push(i);
-// } else {
-//    for (let i = leftLimit; i <= rightLimit; i++) portionNumbers.push(i);
-// }
+
